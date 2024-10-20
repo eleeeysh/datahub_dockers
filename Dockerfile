@@ -17,11 +17,10 @@ USER root
 RUN apt-get -y install htop
 
 # 3) install packages using notebook user
-USER jovyan
+USER siy009
 
 # RUN conda install -y scikit-learn
-
-RUN pip install --no-cache-dir networkx scipy
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
