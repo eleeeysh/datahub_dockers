@@ -20,7 +20,9 @@ RUN apt-get -y install htop
 USER jovyan
 
 # RUN conda install -y scikit-learn
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
+RUN --mount=type=bind,source=requirements.txt,target=/tmp/requirements.txt \
+    pip install --requirement /tmp/requirements.txt
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
