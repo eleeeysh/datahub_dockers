@@ -1,1 +1,2 @@
 pysaliency==0.2.22
+multimatch-gaze==0.1.3
